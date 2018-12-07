@@ -1,17 +1,7 @@
-//let game = document.getElementById("game");
-/*let table = document.createElement("table");
-game.appendChild(table);
-row1 = document.createElement("tr");
-table.appendChild(row1);
-cell11 = document.createElement("td");
-cell12 = document.createElement("td");
-cell12.setAttribute('id', '123');
-row1.appendChild(cell11);
-row1.appendChild(cell12);*/
 playingfieldXO = new PlayingFieldXO();
 playingfieldXO.createReloadButton();
 playingfieldXO.createField();
-//let a = PlayingFieldXO.getPlayingField; //эти две строки чисто для проверки, что таблица значений игрового поля доступна. но она почему-то недоступна.
+//let a = PlayingFieldXO.getPlayingField(); //эти две закомментированные строки чисто для проверки, что таблица значений игрового поля доступна. но она почему-то недоступна.
 //console.log(a[1][1].value);
 
 function PlayingFieldXO() {
@@ -51,25 +41,19 @@ function PlayingFieldXO() {
 					value: 'white'
 				};
 				playingFieldTableCell[i][j] = cell1;
-				console.log(playingFieldTableCell[i][j].value);
-				/*playingFieldTableCell[i][j] = document.createElement("td");
-				playingFieldTableCell[i][j].setAttribute('positionI', i);
-				playingFieldTableCell[i][j].setAttribute('positionJ', j);
-				playingFieldTableCell[i][j].setAttribute('onclick', 'RedRed(this)');
-				playingFieldTableRow[i].appendChild(playingFieldTableCell[i][j]);*/
-				
+				console.log(playingFieldTableCell[i][j].value);	//этот лог чисто чтобы убедиться, что массив успешно создан.			
 			}
 		};
 		
-		console.log(playingFieldTableCell[1][1].value);
-		//this.getPlayingField = function; //это попытка вытащить массив значений из функции создания поля.
+		console.log(playingFieldTableCell[1][1].value); //этот лог чисто чтобы убедиться, что массив успешно создан.			
+		//this.getPlayingField1 = playingFieldTableCell; //это попытка вытащить массив значений из функции создания поля.
 	
 	};
 	
-	this.getPlayingField = function(){
-		let s = CreateField.getPlayingField1;
+	/*this.getPlayingField = function(){
+		let s = this.CreateField.getPlayingField1;
 		return s;
-	};//вытаскиваем игрокое поле из функции создания его
+	};*/ //вытаскиваем игрокое поле из функции создания его
 	
 
 	this.reloadPage = function() {
@@ -91,11 +75,11 @@ function PlayingFieldXO() {
 	
 	
 	this.moveCalculations = function(){
-		//
+		//тут будут подсчеты. эту сущность я пока не написала.
 	}
 };*/
 
 	
 RedRed = function(elem){
-	elem.style.backgroundColor = 'green';
+	elem.style.backgroundColor = 'green';//это пока что чисто проверочная функция, нужна, чтобы видеть, что навешанные атрибуты работают. кстати, если раскомментировать верхние строки с кодом, который должен добывать таблицу из PlayingFieldXO(), она отрубается тоже. я хз почему.
 }
